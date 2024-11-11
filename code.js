@@ -1,23 +1,18 @@
-
-const correctPasswordHash = CryptoJS.SHA256("senha123").toString();
-
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  const passwordInput = document.getElementById("password").value;
-  const passwordHash = CryptoJS.SHA256(passwordInput).toString();
-
-  if (passwordHash === correctPasswordHash) {
-
-    localStorage.setItem("authorized", "true");
-    alert("Login bem-sucedido!");
-    window.location.href = "detalhes.html"; 
-  } else {
-    alert("Senha incorreta!");
+//Verificação de senha na página de login
+const Login = () => {
+  const senha = document.getElementById('senha').value;
+  if (hex_md5(senha) === "10044e5fd1a8702a6fb1f172f10f0371"){
+    sessionStorage.setItem('logado', 'sim');
+    window.location.href = "detalhes.html"
+  } else{
+    alert('Senha incorreta!')
   }
-});
-function checkAuthorization() {
-  if (localStorage.getItem("authorized") !== "true") {
-    alert("Acesso negado! Por favor, faça login.");
-    window.location.href = "detalhes.html"; 
-  }
+}
+
+document.getElementById("botao").onclick = Login;
+
+//Função de logout, retirando da sessionStorage
+
+document.getElementById("logout").onclick = () => {
+  sessionStorage.removeItem("logado");
 }
