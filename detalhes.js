@@ -40,45 +40,42 @@ document.addEventListener("DOMContentLoaded", () => {
         const all = document.getElementById('botaoall');
         const fem = document.getElementById('botaofem');
         const masc = document.getElementById('botaomasc');
+        const logout = document.getElementById('logout');
 
-        if (all) {
-            all.onclick = () => {
-                container.innerHTML = ''; 
-                pega_json(`${urlAll}`).then(
-                    (r) => {
-                        r.forEach(
-                            (ele) => container.appendChild(montaCard(ele))
-                        );
-                    }
-                );
-            };
-        }
-
-        if (fem) {
-            fem.onclick = () => {
-                container.innerHTML = ''; 
-                pega_json(`${urlFem}`).then(
-                    (r) => {
-                        r.forEach(
-                            (ele) => container.appendChild(montaCard(ele))
-                        );
-                    }
-                );
-            };
-        }
-
-        if (masc) {
-            masc.onclick = () => {
-                container.innerHTML = ''; 
-                pega_json(`${urlMasc}`).then(
-                    (r) => {
-                        r.forEach(
-                            (ele) => container.appendChild(montaCard(ele))
-                        );
-                    }
-                );
-            };
-        }
+        logout.onclick = () => {
+            sessionStorage.removeItem("logado");
+            window.location.href = "index.html"
+        };
+        all.onclick = () => {
+            container.innerHTML = '';
+            pega_json(`${urlAll}`).then(
+                (r) => {
+                    r.forEach(
+                        (ele) => container.appendChild(montaCard(ele))
+                    );
+                }
+            );
+        };
+        fem.onclick = () => {
+            container.innerHTML = '';
+            pega_json(`${urlFem}`).then(
+                (r) => {
+                    r.forEach(
+                        (ele) => container.appendChild(montaCard(ele))
+                    );
+                }
+            );
+        };
+        masc.onclick = () => {
+            container.innerHTML = '';
+            pega_json(`${urlMasc}`).then(
+                (r) => {
+                    r.forEach(
+                        (ele) => container.appendChild(montaCard(ele))
+                    );
+                }
+            );
+        };
     };
 
     acessarCard();

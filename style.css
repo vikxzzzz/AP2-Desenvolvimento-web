@@ -3,7 +3,7 @@
     font-weight: bold;
 }
 
-.main-container {
+.detalhes-container {
     display: flex;
     flex-direction: column; 
     justify-content: flex-start; 
@@ -141,3 +141,4 @@
 #container img {
     width: 100%;
 }
+
