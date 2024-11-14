@@ -1,6 +1,6 @@
 const Login = () => {
   const senha = document.getElementById('senha').value;
-  if (hex_md5(senha) === "10044e5fd1a8702a6fb1f172f10f0371"){
+  if (hex_sha256(senha) === "ce855f48b7422de36b50512a9a0a06a59d4f2f6efac6f439456777a396773cc1"){
     sessionStorage.setItem('logado', 'sim');
     window.location.href = "detalhes.html"
   } else{
