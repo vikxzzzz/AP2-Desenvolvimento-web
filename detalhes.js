@@ -36,15 +36,6 @@ const montaCard = (atleta) => {
     return cartao;
 };
 
-const estaLogado = () => {
-    if (sessionStorage.getItem("logado") === "sim") {
-        return true;
-    } else {
-        alert("Você precisa estar logado para acessar esta página.");
-        window.location.href = "login.html"; 
-        return false;
-    }
-};
 
 
 const botaoLogout = () => {
