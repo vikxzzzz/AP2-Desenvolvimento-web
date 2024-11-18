@@ -9,14 +9,17 @@
   <script src="detalhes.js" defer></script>
 </head>
 <body>
+  <button id="logout-detalhes">Logout</button> 
   <div class="detalhes-container">
     <h1>ESCOLHA OS ELENCOS QUE DESEJA VER</h1>
-    <button id="logout">Logout</button> 
     <div class="div-detalhes">
       <button id="botaoall">Elenco completo</button>
       <button id="botaomasc">Elenco Masculino</button>
       <button id="botaofem">Elenco Feminino</button>
     </div>
+  </div>
+  <div class="center-filtar-jogadores">
+    <input type="text" id='filtrar-jogadores' placeholder="Pesquisar atleta nesse elenco"/>
   </div>
   <div id="container"></div>
 </body>
