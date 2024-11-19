@@ -6,9 +6,15 @@ const id = params.get("id");
 const urlDetalhes = `https://botafogo-atletas.mange.li/2024-1/${id}`;
 
 const pega_json = async (caminho) => {
-    const resposta = await fetch(caminho);
-    const dados = await resposta.json();
-    return dados;
+    try{
+        const resposta = await fetch(caminho);
+        const dados = await resposta.json();
+        return dados;
+
+    } catch (error) {
+        alert("Ocorreu um erro ao carregar os jogadores");
+        console.log("Erro ao carregar os jogadores", error);
+    }
 };
 
 const exibeDetalhes = (atleta) => {

@@ -6,9 +6,15 @@ const container = document.getElementById("container");
 const pesquisaInput = document.getElementById('filtrar-jogadores');
 
 const pega_json = async (caminho) => {
-    const resposta = await fetch(caminho);
-    const dados = await resposta.json();
-    return dados;
+    try{
+        const resposta = await fetch(caminho);
+        const dados = await resposta.json();
+        return dados;
+
+    } catch (error) {
+        alert("Ocorreu um erro ao carregar os jogadores");
+        console.log("Erro ao carregar os jogadores", error);
+    }
 };
 
 const montaCard = (atleta) => {
@@ -38,12 +44,10 @@ const montaCard = (atleta) => {
 
 const botaoLogout = () => {
     const logout = document.getElementById("logout-detalhes");
-    if (logout) {
         logout.onclick = () => {
             sessionStorage.removeItem("logado");
             window.location.href = "index.html";
         };
-    }
 };
 
 const barraPesquisa = (jogadores) => {
@@ -65,35 +69,28 @@ const acessarCard = () => {
     const fem = document.getElementById('botaofem');
     const masc = document.getElementById('botaomasc');
 
-    if (all) {
-        all.onclick = () => {
-            container.innerHTML = '';
-            pega_json(urlAll).then((jogadores) => {
-                jogadores.forEach((ele) => container.appendChild(montaCard(ele)));
-                barraPesquisa(jogadores); 
-            });
-        };
-    }
+    all.onclick = () => {
+        container.innerHTML = '';
+        pega_json(urlAll).then((jogadores) => {
+            jogadores.forEach((ele) => container.appendChild(montaCard(ele)));
+            barraPesquisa(jogadores);
+        });
+    };
+    fem.onclick = () => {
+        container.innerHTML = '';
+        pega_json(urlFem).then((jogadores) => {
+            jogadores.forEach((ele) => container.appendChild(montaCard(ele)));
+            barraPesquisa(jogadores);
+        });
+    };
+    masc.onclick = () => {
+        container.innerHTML = '';
+        pega_json(urlMasc).then((jogadores) => {
+            jogadores.forEach((ele) => container.appendChild(montaCard(ele)));
+            barraPesquisa(jogadores);
+        });
+    };
 
-    if (fem) {
-        fem.onclick = () => {
-            container.innerHTML = '';
-            pega_json(urlFem).then((jogadores) => {
-                jogadores.forEach((ele) => container.appendChild(montaCard(ele)));
-                barraPesquisa(jogadores); 
-            });
-        };
-    }
-
-    if (masc) {
-        masc.onclick = () => {
-            container.innerHTML = '';
-            pega_json(urlMasc).then((jogadores) => {
-                jogadores.forEach((ele) => container.appendChild(montaCard(ele)));
-                barraPesquisa(jogadores);
-            });
-        };
-    }
 };
 
 document.addEventListener("DOMContentLoaded", () => {
