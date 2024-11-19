@@ -31,7 +31,7 @@
 }
 
 #botaoall:hover, #botaomasc:hover, #botaofem:hover {
-    background-color: gold;
+    background-color: goldenrod;
 }
 
 
@@ -97,7 +97,7 @@
 }
 
 #botao:hover {
-    background-color: gold;
+    background-color: goldenrod;
     
 }
 
@@ -136,10 +136,9 @@
     padding: 0 10px;
 }
 
-
 #container > article {
     width: 20rem;
-    border: solid grey 1px;
+    border: solid goldenrod 3px;
     border-radius: 5px;
     margin: 1rem;
     text-align: center;
@@ -154,12 +153,14 @@
 
 #container p {
     padding: 0 1rem 1rem;
-    color: #555;
+    color: #000000;
 }
+
 
 #container img {
     width: 100%;
 }
+
 
 .center-filtar-jogadores {
     display: flex;

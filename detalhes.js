@@ -28,7 +28,6 @@ const montaCard = (atleta) => {
     cartao.appendChild(saibaMais);
 
     cartao.dataset.id = atleta.id;
-
     cartao.onclick = () => {
         window.location.href = `card.html?id=${atleta.id}`;
     };
