@@ -4,7 +4,7 @@
 }
 
 
-.detalhes-container {
+#detalhes-container {
     display: flex;
     flex-direction: column; 
     justify-content: flex-start; 
@@ -14,7 +14,7 @@
     text-align: center;
 }
 
-.div-detalhes {
+#div-detalhes {
     display: flex;
     gap: 10px; 
     flex-direction: row; 
@@ -36,7 +36,7 @@
 }
 
 
-.center-container {
+#center-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +44,7 @@
     background-color: #f3f3f3;
 }
 
-.login-box {
+#login-box {
     display: grid;
     justify-content: center;
     align-items: center;
@@ -62,7 +62,7 @@
     margin-bottom: 20px;
 }
 
-.login-box img {
+#login-box img {
     width: 100px;
     height: auto;
     margin-bottom: 20px;
@@ -71,7 +71,7 @@
     margin-right: auto;
 }
 
-.login-box input[type="password"] {
+#login-box input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -80,7 +80,7 @@
     box-sizing: border-box;
 }
 
-.login-box button {
+#login-box button {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
@@ -167,7 +167,7 @@
 }
 
 
-.center-filtar-jogadores {
+#center-filtar-jogadores {
     display: flex;
     justify-content: center; 
     margin-top: 20px; 
@@ -226,11 +226,29 @@
     margin: 10px 0;
 }
 
-.center-card {
+#center-card {
     display: flex;
     flex-direction: column;  
     justify-content: center; 
     align-items: center;
     height: 100vh;          
     text-align: center;
+}
+
+@media screen and (min-width: 1024px){
+    #container {
+        grid-template-columns: auto auto auto auto;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    #container {
+        grid-template-columns: auto auto auto auto auto;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    #container {
+        grid-template-columns: auto auto auto auto auto;
+    }
 }
