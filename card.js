@@ -37,3 +37,5 @@ const exibeDetalhes = (atleta) => {
 pega_json(urlDetalhes).then((atleta) => {
     exibeDetalhes(atleta);
 });
+
+

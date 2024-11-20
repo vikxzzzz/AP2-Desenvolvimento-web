@@ -89,6 +89,7 @@ const elencoDropdown = () => {
     });
 };
 
+
 const acessarCard = () => {
     botaoLogout();
     elencoDropdown();

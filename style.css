@@ -40,9 +40,7 @@
     background-color: goldenrod;
 }
 
-#elenco-dropdown {
-    display: none;
-}
+
 
 #center-filtar-jogadores {
     display: flex;
@@ -245,13 +243,27 @@
 }
 
 
+#elenco-dropdown {
+    display: none;
+}
+
 @media (max-width: 768px) {
     #div-detalhes button {
         display: none;
     }
 
     #elenco-dropdown {
-        display: block;
-        margin-top: 10px;
+        display: block; 
+        width: 100%; 
+        padding: 12px 20px; 
+        font-size: 18px; 
+        font-family: 'Sofadi One', cursive; 
+        background-color: grey; 
+        border-radius: 8px; 
+        color: black; 
+        transition: all 0.3s ease; 
+        margin-top: 10px; 
+        cursor: pointer; 
     }
 }
+
