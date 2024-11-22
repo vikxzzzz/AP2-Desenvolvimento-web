@@ -69,7 +69,7 @@ const montaCard = (atleta) => {
 };
 
 const botaoLogout = () => {
-    const logout = document.getElementById("logout-detalhes");
+    const logout = document.getElementById("logout-elencos");
     logout.onclick = () => {
         sessionStorage.removeItem("logado");
         window.location.href = "index.html";
