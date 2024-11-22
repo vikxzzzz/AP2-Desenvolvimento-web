@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botafogo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="escudo-botafogo.png" sizes="15x15">
+  <script src="elencos.js" defer></script>
+</head>
+<body>
+  <button id="logout-elencos">Logout</button> 
+  <div id="detalhes-container">
+    <h1>ESCOLHA OS ELENCOS QUE DESEJA VER</h1>
+    <div id="div-detalhes">
+      <button id="botaoall">Elenco completo</button>
+      <button id="botaomasc">Elenco Masculino</button>
+      <button id="botaofem">Elenco Feminino</button>
+      <select id="elenco-dropdown">
+        <option value="all">Elenco Completo</option>
+        <option value="masc">Elenco Masculino</option>
+        <option value="fem">Elenco Feminino</option>
+      </select>      
+    </div>
+  </div>
+  <div id="center-filtar-jogadores">
+    <input type="text" id='filtrar-jogadores' placeholder="Pesquisar atleta nesse elenco"/>
+  </div>
+  <p id="carregando-msg">Carregando os jogadores do elenco...</p>
+  <div id="container"></div>
+</body>
+</html>

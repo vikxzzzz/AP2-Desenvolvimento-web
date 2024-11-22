@@ -1,32 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Botafogo</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="escudo-botafogo.png" sizes="15x15">
-  <script src="detalhes.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atleta Detalhes</title>
+    <script src="detalhes.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="escudo-botafogo.png" sizes="15x15">
 </head>
 <body>
-  <button id="logout-detalhes">Logout</button> 
-  <div id="detalhes-container">
-    <h1>ESCOLHA OS ELENCOS QUE DESEJA VER</h1>
-    <div id="div-detalhes">
-      <button id="botaoall">Elenco completo</button>
-      <button id="botaomasc">Elenco Masculino</button>
-      <button id="botaofem">Elenco Feminino</button>
-      <select id="elenco-dropdown">
-        <option value="all">Elenco Completo</option>
-        <option value="masc">Elenco Masculino</option>
-        <option value="fem">Elenco Feminino</option>
-      </select>      
+    <div id="center-card">
+        <div id="atletaDetalhes"></div>
+        <a id="voltar-card" href="elencos.html">Voltar</a>
     </div>
-  </div>
-  <div id="center-filtar-jogadores">
-    <input type="text" id='filtrar-jogadores' placeholder="Pesquisar atleta nesse elenco"/>
-  </div>
-  <p id="carregando-msg">Carregando os jogadores do elenco...</p>
-  <div id="container"></div>
 </body>
 </html>
