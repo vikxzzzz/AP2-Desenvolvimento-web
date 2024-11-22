@@ -101,7 +101,6 @@
 #logout-detalhes {
     padding: 10px 20px;
     font-size: 20px;
-    border: none;
     border-radius: 5px;
     background-color: grey;
     color: #000000;
@@ -118,7 +117,6 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f3f3f3;
 }
 
 #login-box {
@@ -177,48 +175,39 @@
     background-color: goldenrod;
 }
 
-#logout {
-    background-color: black;
-}
-
-#logout:hover {
-    background-color: red;
-}
-
 #atletaDetalhes {
-    background-color: #ffffff;
-    padding: 20px;
-    max-width: 800px;
+    background: linear-gradient(135deg, #ffffff, #f0f0f5); 
+    padding: 10px;
+    max-width: 900px;
     width: 100%;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 8px 8px 8px 8px rgb(0, 0, 0);
+    margin: 30px auto;
+    border-radius: 20px; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     text-align: center;
-}
-
-#atletaDetalhes h2 {
-    font-size: 28px;
-    font-weight: bold;
-    color: #000000;
-    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif; 
+    border: 1px solid #dcdde1; 
 }
 
 #atletaDetalhes img {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     height: auto;
-    object-fit: cover;
-    margin: 0 auto 20px;
-    display: block;
+    padding: 20px;
     border-radius: 5%;
-    border: 4px solid rgb(0, 0, 0);
+    object-fit: cover;
+    margin: 0 auto 25px;
+    display: block;
+    border: 6px solid goldenrod;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 #atletaDetalhes p {
     font-size: 18px;
-    line-height: 1.6;
-    color: #000000;
-    margin: 10px 0;
+    line-height: 1.8;
+    color: #000000; 
+    margin: 15px 0;
+    text-align: center; 
+
 }
 
 #center-card {
@@ -267,3 +256,29 @@
     }
 }
 
+#carregando-msg {
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#voltar-card{
+    padding: 12px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: grey;
+    color: #000000;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#voltar-card:hover {
+    background-color: goldenrod;
+}

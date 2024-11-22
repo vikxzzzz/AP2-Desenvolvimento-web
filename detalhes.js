@@ -6,9 +6,7 @@ const container = document.getElementById("container");
 const pesquisaInput = document.getElementById('filtrar-jogadores');
 
 const montaAguarde = () => {
-    const carregandoJogadores = document.createElement("p");
-    carregandoJogadores.id = "loading-message";
-    carregandoJogadores.innerText = "Aguarde...";
+    const carregandoJogadores = document.getElementById("carregando-msg");
     carregandoJogadores.style.display = "none";
     container.parentElement.insertBefore(carregandoJogadores, container);
     return carregandoJogadores;

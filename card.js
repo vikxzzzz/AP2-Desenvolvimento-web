@@ -22,16 +22,23 @@ const exibeDetalhes = (atleta) => {
     const imagem = document.createElement("img");
     const descricao = document.createElement("p");
     const altura = document.createElement("p");
+    const posicao = document.createElement("p");
+    const nJogos = document.createElement("p");
 
     nome.innerHTML = atleta.nome;
     imagem.src = atleta.imagem;
-    descricao.innerHTML = atleta.detalhes;
     altura.innerHTML = `Altura: ${atleta.altura} m`;
+    posicao.innerHTML = `Posição: ${atleta.posicao}`;
+    nJogos.innerHTML = `Jogos: ${atleta.n_jogos}`;
+    descricao.innerHTML = atleta.detalhes;
 
     atletaDetalhes.appendChild(nome);
     atletaDetalhes.appendChild(imagem);
-    atletaDetalhes.appendChild(descricao);
     atletaDetalhes.appendChild(altura);
+    atletaDetalhes.appendChild(posicao);
+    atletaDetalhes.appendChild(nJogos);
+    atletaDetalhes.appendChild(descricao);
+
 };
 
 pega_json(urlDetalhes).then((atleta) => {
