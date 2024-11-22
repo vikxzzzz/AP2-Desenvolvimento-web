@@ -3,6 +3,10 @@
     font-weight: bold;
 }
 
+html{
+    background-color: rgb(179, 176, 176);
+}
+
 #detalhes-container {
     display: flex;
     flex-direction: column;
