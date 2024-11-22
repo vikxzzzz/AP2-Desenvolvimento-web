@@ -4,14 +4,10 @@ const Login = () => {
     sessionStorage.setItem('logado', 'sim');
     window.location.href = "detalhes.html"
   } else{
-    alert('Senha incorreta!')
+    alert('Senha incorreta! Tente novamente');
   }
 }
 
 document.getElementById("botao").onclick = Login;
 
-
-document.getElementById("logout").onclick = () => {
-  sessionStorage.removeItem("logado");
-}
 

@@ -5,14 +5,36 @@ const urlFem = "https://botafogo-atletas.mange.li/2024-1/feminino";
 const container = document.getElementById("container");
 const pesquisaInput = document.getElementById('filtrar-jogadores');
 
+const montaAguarde = () => {
+    const carregandoJogadores = document.createElement("p");
+    carregandoJogadores.id = "loading-message";
+    carregandoJogadores.innerText = "Aguarde...";
+    carregandoJogadores.style.display = "none";
+    container.parentElement.insertBefore(carregandoJogadores, container);
+    return carregandoJogadores;
+};
+
+const carregandoJogadores = montaAguarde();
+
+const mostraCarregando = () => {
+    carregandoJogadores.style.display = "block";
+};
+
+const escondeCarregando = () => {
+    carregandoJogadores.style.display = "none";
+};
+
 const pega_json = async (caminho) => {
     try {
+        mostraCarregando();
         const resposta = await fetch(caminho);
         const dados = await resposta.json();
         return dados;
     } catch (error) {
         alert("Ocorreu um erro ao carregar os jogadores");
         console.log("Erro ao carregar os jogadores", error);
+    } finally {
+        escondeCarregando();
     }
 };
 
@@ -38,7 +60,11 @@ const montaCard = (atleta) => {
 
     cartao.dataset.id = atleta.id;
     cartao.onclick = () => {
-        window.location.href = `card.html?id=${atleta.id}`;
+        if (sessionStorage.getItem("logado") === "sim") {
+            window.location.href = `card.html?id=${atleta.id}`;
+        }else{
+            alert("Faça login para ver os detalhes do atleta");
+        }
     };
 
     return cartao;
@@ -89,7 +115,6 @@ const elencoDropdown = () => {
     });
 };
 
-
 const acessarCard = () => {
     botaoLogout();
     elencoDropdown();
@@ -121,7 +146,6 @@ const acessarCard = () => {
             barraPesquisa(jogadores);
         });
     };
-    
 };
 
 document.addEventListener("DOMContentLoaded", () => {
